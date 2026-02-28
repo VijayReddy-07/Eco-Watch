@@ -1,0 +1,73 @@
+{
+  "name": "LocationAlert",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string",
+      "description": "Owner user email"
+    },
+    "name": {
+      "type": "string",
+      "description": "Alert zone name"
+    },
+    "center_lat": {
+      "type": "number"
+    },
+    "center_lng": {
+      "type": "number"
+    },
+    "radius_km": {
+      "type": "number",
+      "default": 10,
+      "description": "Radius in km"
+    },
+    "location_label": {
+      "type": "string",
+      "description": "Human readable location label"
+    },
+    "observation_types": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "air_quality",
+          "water_quality",
+          "biodiversity",
+          "noise_level"
+        ]
+      },
+      "description": "Observation types to watch"
+    },
+    "severities": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "low",
+          "moderate",
+          "high",
+          "critical"
+        ]
+      },
+      "description": "Severity levels to trigger alert"
+    },
+    "notify_inapp": {
+      "type": "boolean",
+      "default": true
+    },
+    "notify_email": {
+      "type": "boolean",
+      "default": false
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": [
+    "user_email",
+    "name",
+    "center_lat",
+    "center_lng"
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "name": "UserProfile",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string"
+    },
+    "display_name": {
+      "type": "string"
+    },
+    "bio": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "avatar_url": {
+      "type": "string"
+    },
+    "expertise": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "badges": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "total_observations": {
+      "type": "number",
+      "default": 0
+    },
+    "validated_observations": {
+      "type": "number",
+      "default": 0
+    },
+    "notification_preferences": {
+      "type": "object",
+      "properties": {
+        "critical_alerts": {
+          "type": "boolean",
+          "default": true
+        },
+        "new_observations": {
+          "type": "boolean",
+          "default": false
+        },
+        "weekly_digest": {
+          "type": "boolean",
+          "default": true
+        }
+      }
+    }
+  },
+  "required": [
+    "user_email"
+  ]
+}

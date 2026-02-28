@@ -1,0 +1,47 @@
+{
+  "name": "Alert",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "message": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "critical",
+        "warning",
+        "info",
+        "success"
+      ],
+      "default": "info"
+    },
+    "observation_type": {
+      "type": "string",
+      "enum": [
+        "air_quality",
+        "water_quality",
+        "biodiversity",
+        "noise_level",
+        "system"
+      ]
+    },
+    "location_name": {
+      "type": "string"
+    },
+    "is_read": {
+      "type": "boolean",
+      "default": false
+    },
+    "observation_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "title",
+    "message",
+    "type"
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "name": "Observation",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "air_quality",
+        "water_quality",
+        "biodiversity",
+        "noise_level"
+      ],
+      "description": "Type of environmental observation"
+    },
+    "title": {
+      "type": "string",
+      "description": "Brief title of the observation"
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed description of the observation"
+    },
+    "latitude": {
+      "type": "number",
+      "description": "GPS latitude coordinate"
+    },
+    "longitude": {
+      "type": "number",
+      "description": "GPS longitude coordinate"
+    },
+    "location_name": {
+      "type": "string",
+      "description": "Human-readable location name"
+    },
+    "measurement_value": {
+      "type": "number",
+      "description": "Numeric measurement value if applicable"
+    },
+    "measurement_unit": {
+      "type": "string",
+      "description": "Unit of measurement"
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "low",
+        "moderate",
+        "high",
+        "critical"
+      ],
+      "default": "low",
+      "description": "Severity level of the observation"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "validated",
+        "flagged",
+        "rejected"
+      ],
+      "default": "pending",
+      "description": "Validation status"
+    },
+    "confidence_score": {
+      "type": "number",
+      "description": "AI confidence score 0-100"
+    },
+    "image_url": {
+      "type": "string",
+      "description": "Photo evidence URL"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Related tags"
+    },
+    "weather_conditions": {
+      "type": "string",
+      "description": "Weather at time of observation"
+    },
+    "species_name": {
+      "type": "string",
+      "description": "Species name for biodiversity sightings"
+    }
+  },
+  "required": [
+    "type",
+    "title",
+    "latitude",
+    "longitude"
+  ]
+}
